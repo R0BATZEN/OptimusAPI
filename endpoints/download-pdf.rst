@@ -8,7 +8,7 @@ This API endpoint allows for the retrieval and download of benchmark content in 
 	* - Request Type
 	  - Visibility
 	* - GET
-	  - Public
+	  - SecureSuite Members Only
 
 Base URL
 --------
@@ -26,10 +26,18 @@ Endpoint
 
 Request Payload/Parameters
 --------------------------
+In order to provide download authorization, members must first authenticate their license key using the :code:`/license` endpoint.  The response from that endpoint is an authorization token.
+
 
 Request Headers
 ^^^^^^^^^^^^^^^
-None
+.. list-table::
+	:header-rows: 1
+
+	* - Header Name
+	  - Description
+	* - X-SecureSuite-Token
+	  - The token received from a successful license key verification, e.g., :code:`1234|7b68c544113bc4notvalid358ffd4ba7f254e39c4a842cefed748`
 
 URL Parameters
 ^^^^^^^^^^^^^^
